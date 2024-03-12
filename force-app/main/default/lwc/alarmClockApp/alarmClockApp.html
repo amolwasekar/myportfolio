@@ -1,0 +1,29 @@
+<template>
+    <div class="alarmApp">
+        <h1>Alarm Clock</h1>
+        <img src={clockImg} height="200px" width="200px" alt="Clock Image" class={shakeImage}>
+        <h2>{currentTime}</h2>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <c-clock-dropdown unique-id="selecthours" label="Hour(s)" options={hoursOptions}
+                    onoptionhandler={optionsHandler}></c-clock-dropdown>
+            </div>
+            <div class="slds-col">
+                <c-clock-dropdown unique-id="selectminutes" label="Minute(s)" options={minutesOptions}
+                    onoptionhandler={optionsHandler}></c-clock-dropdown>
+            </div>
+            <div class="slds-col">
+                <c-clock-dropdown unique-id="selectmeridiem" label="AM/PM" options={meridiemOptions}
+                    onoptionhandler={optionsHandler}></c-clock-dropdown>
+            </div>
+        </div>
+        <template if:false={isAlarmSet}>
+            <button class="slds-button slds-button_neutral slds-button_stretch" onclick={setAlarmHandler}
+                disabled={isFieldBlank}>Set Alarm</button>
+        </template>
+        <template if:true={isAlarmSet}>
+            <button class="slds-button slds-button_neutral slds-button_stretch" onclick={clearAlarmHandler}>Clear
+                Alarm</button>
+        </template>
+    </div>
+</template>
