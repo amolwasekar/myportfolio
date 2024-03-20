@@ -1,0 +1,36 @@
+.box{
+    max-width: 420px;
+    margin: 50px auto;
+    background: darkslateblue;
+    color: aliceblue;
+    padding: 16px;
+    border-radius: 15px;
+}
+
+h1{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.customButton{
+    background: orange;
+    font-size: 24px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.customInput{
+    color: black;
+    font-weight: bold;
+}
+
+.result{
+    color: aliceblue;
+    font-size: 30px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}

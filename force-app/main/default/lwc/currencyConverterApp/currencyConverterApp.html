@@ -1,3 +1,33 @@
 <template>
-    <div>this is currency converter app</div>
+    <div class="app">
+        <div class="box">
+            <h1>Currency Converter</h1>
+            <form onsubmit={calculateCurrency}>
+                <lightning-input class="slds-m-vertical_large customInput" type="number" label="Enter Amount"
+                    onchange={inputHandler}></lightning-input>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-combobox class="customInput" name="currencyFrom" label="Fron"
+                            value={currencyFromValue} placeholder="Select Currency" options={currencyOptions}
+                            onchange={handleCurrencyChange}></lightning-combobox>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-icon icon-name='action:change_record_type' alternative-text='change_record_type'
+                            size='large' title='change_record_type'></lightning-icon>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-combobox class="customInput" name="currencyTo" label="to" value={currencyToValue}
+                            placeholder="Select Currency" options={currencyOptions}
+                            onchange={handleCurrencyChange}></lightning-combobox>
+                    </div>
+                </div>
+                <div class="result">
+                {amountInput} {currencyFromValue} : {result} {currencyToValue}
+                </div>
+                <button
+                    class="slds-button slds-button_neutral slds-button_stretch slds-m-vertical_large slds-p-around_medium customButton">Calculate
+                    Currency</button>
+            </form>
+        </div>
+    </div>
 </template>
